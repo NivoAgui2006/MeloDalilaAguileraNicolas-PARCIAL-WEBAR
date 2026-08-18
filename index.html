@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Experimento la Innovación de Reebok</title>
+
+  <!-- Model Viewer para visualización 3D y Realidad Aumentada -->
+  <script type="module"
+    src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js">
+  </script>
+
+  <style>
+    :root {
+      --rojo: #e31837;
+      --negro: #111111;
+      --blanco: #ffffff;
+      --gris: #f4f4f4;
+      --gris-texto: #555555;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--blanco);
+      color: var(--negro);
+      line-height: 1.5;
+    }
+
+    header {
+      background: var(--negro);
+      color: var(--blanco);
+      text-align: center;
+      padding: 25px 20px;
+    }
+
+    header h1 {
+      color: var(--blanco);
+      font-size: clamp(1.7rem, 5vw, 2.8rem);
+      margin-bottom: 8px;
+    }
+
+    header p {
+      color: var(--rojo);
+      font-weight: bold;
+      font-size: 1.05rem;
+    }
+
+    main {
+      width: 100%;
+      max-width: 1100px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    .producto {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      align-items: center;
+    }
+
+    .visor {
+      background: var(--gris);
+      border-radius: 18px;
+      padding: 10px;
+      text-align: center;
+    }
+
+    model-viewer {
+      width: 100%;
+      height: 480px;
+      background: #f4f4f4;
+      border-radius: 15px;
+    }
+
+    .informacion h2 {
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
+      margin-bottom: 15px;
+    }
+
+    .descripcion {
+      color: var(--gris-texto);
+      margin-bottom: 18px;
+    }
+
+    .beneficios {
+      list-style: none;
+      margin: 20px 0;
+    }
+
+    .beneficios li {
+      margin-bottom: 9px;
+    }
+
+    .precio {
+      margin: 20px 0;
+    }
+
+    .precio-anterior {
+      color: #777;
+      text-decoration: line-through;
+      font-size: 1.1rem;
+    }
+
+    .precio-actual {
+      color: var(--rojo);
+      font-size: 2rem;
+      font-weight: bold;
+    }
+
+    .botones {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .boton {
+      display: inline-block;
+      padding: 14px 22px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      text-align: center;
+      cursor: pointer;
+      border: none;
+      font-size: 1rem;
+    }
+
+    .comprar {
+      background: var(--rojo);
+      color: var(--blanco);
+    }
+
+    .whatsapp {
+      background: #25D366;
+      color: var(--blanco);
+    }
+
+    .comprar:hover,
+    .whatsapp:hover {
+      opacity: 0.9;
+    }
+
+    .qr-section {
+      text-align: center;
+      background: var(--negro);
+      color: var(--blanco);
+      border-radius: 15px;
+      margin-top: 35px;
+      padding: 25px;
+    }
+
+    .qr-section h3 {
+      margin-bottom: 10px;
+    }
+
+    #qr {
+      margin: 20px auto 0;
+      width: 180px;
+      height: 180px;
+      background: var(--blanco);
+      padding: 10px;
+      border-radius: 10px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px 20px;
+      margin-top: 30px;
+      background: var(--gris);
+      color: var(--gris-texto);
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      .producto {
+        grid-template-columns: 1fr;
+      }
+
+      model-viewer {
+        height: 380px;
+      }
+
+      .botones {
+        flex-direction: column;
+      }
+
+      .boton {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>EXPERIMENTA LA INNOVACIÓN DE REEBOK</h1>
+    <p>Comodidad, estilo y rendimiento en cada paso</p>
+  </header>
+
+  <main>
+
+    <section class="producto">
+
+      <div class="visor">
+
+        <model-viewer
+          src="modelo.glb"
+          alt="Reebok Men's Rapid Strike Shoes"
+          camera-controls
+          auto-rotate
+          ar
+          ar-modes="webxr scene-viewer quick-look"
+          shadow-intensity="1">
+
+          <button
+            class="boton comprar"
+            slot="ar-button">
+            Ver en mi espacio
+          </button>
+
+        </model-viewer>
+
+      </div>
+
+      <div class="informacion">
+
+        <h2>Reebok Men's Rapid Strike Shoes</h2>
+
+        <p class="descripcion">
+          Tenis deportivos para hombre diseñados para caminata,
+          entrenamiento, gimnasio y uso diario. Su diseño moderno
+          y cómodo brinda excelente soporte y estabilidad en cada paso.
+        </p>
+
+        <ul class="beneficios">
+          <li>✅ Material resistente y duradero.</li>
+          <li>✅ Suela antideslizante para mayor agarre.</li>
+          <li>✅ Interior acolchado para mayor comodidad.</li>
+          <li>✅ Ideales para actividad física, trabajo o uso casual.</li>
+          <li>✅ Diseño ligero que favorece el rendimiento y la movilidad.</li>
+        </ul>
+
+        <div class="precio">
+          <div class="precio-anterior">Valor antes: $170.000</div>
+          <div class="precio-actual">Valor ahora: $154.000</div>
+        </div>
+
+        <p>
+          <strong>Color:</strong>
+          Blanco / Negro / Rojo (según disponibilidad).
+        </p>
+
+        <p>
+          <strong>Incluye:</strong>
+          Par de tenis Reebok originales en su caja.
+        </p>
+
+        <p style="margin-top: 12px;">
+          ¡Lleva la comodidad y el estilo de Reebok a cada paso!
+        </p>
+
+        <div class="botones">
+
+          <a
+            class="boton comprar"
+            href="https://www.amazon.com/dp/B0G5BZKZWX"
+            target="_blank"
+            rel="noopener noreferrer">
+            COMPRAR AHORA
+          </a>
+
+          <a
+            class="boton whatsapp"
+            href="https://wa.me/573188141218?text=Hola%2C%20estoy%20interesado%20en%20los%20Reebok%20Men%27s%20Rapid%20Strike%20Shoes."
+            target="_blank"
+            rel="noopener noreferrer">
+            WHATSAPP
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <section class="qr-section">
+
+      <h3>Escanea y vive la experiencia WebAR</h3>
+
+      <p>
+        Escanea este código desde tu celular para abrir
+        la experiencia en realidad aumentada.
+      </p>
+
+      <div id="qr"></div>
+
+    </section>
+
+  </main>
+
+  <footer>
+    <p>
+      EXPERIMENTA LA INNOVACIÓN DE REEBOK
+    </p>
+    <p>
+      Reebok Men's Rapid Strike Shoes
+    </p>
+  </footer>
+
+  <!-- Generador del código QR -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+  <script>
+    const urlPublica = window.location.href;
+
+    new QRCode(document.getElementById("qr"), {
+      text: urlPublica,
+      width: 160,
+      height: 160,
+      colorDark: "#111111",
+      colorLight: "#ffffff"
+    });
+  </script>
+
+</body>
+</html>
